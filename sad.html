@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>سعدیه ❤️‍🔥 جشن آشتی</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;500;900&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<style>
+:root{color-scheme:dark;--rose:#ff3d75;--ember:#ff9a3c;--gold:#ffd27a;--text:#fff0f3;--muted:#f6bfcc;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:radial-gradient(circle at 18% 12%,#5e1244 0,transparent 46%),radial-gradient(circle at 88% 88%,#7d2408 0,transparent 42%),#0d0310;color:var(--text);font-family:"Vazirmatn",Tahoma,sans-serif;overflow:hidden;line-height:1.9;perspective:1200px}
+#gl{position:fixed;inset:0;width:100%;height:100%;display:block}
+.stage{position:fixed;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;gap:18px;transform-style:preserve-3d}
+.stage.on{display:flex;animation:flip .9s cubic-bezier(.2,.8,.2,1)}
+@keyframes flip{from{opacity:0;transform:rotateX(-70deg) translateZ(-200px) scale(.8)}to{opacity:1;transform:none}}
+.sub{margin:0;font-size:20px;font-weight:300;color:var(--muted)}
+.name{margin:0;font-weight:900;font-size:clamp(72px,24vw,170px);line-height:1.2;color:#ffe2a8;
+ text-shadow:0 1px 0 #ffb347,0 2px 0 #ff9a3c,0 3px 0 #ff7a3c,0 4px 0 #ff5a3c,0 5px 0 #ff3d4d,0 6px 0 #e02a5a,0 7px 0 #b81c52,0 8px 0 #8f1048,0 12px 22px rgba(0,0,0,.6),0 0 46px rgba(255,110,60,.85);
+ animation:bob 3.2s ease-in-out infinite;transform-style:preserve-3d}
+@keyframes bob{50%{transform:translateY(-10px) rotateX(8deg) rotateY(-6deg)}}
+.card{max-width:520px;width:100%;padding:26px 24px;border-radius:26px;font-size:19px;background:linear-gradient(150deg,rgba(255,255,255,.12),rgba(255,61,117,.14));border:1px solid rgba(255,190,180,.5);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 30px 60px rgba(0,0,0,.5),0 0 50px rgba(255,70,100,.3),inset 0 1px 0 rgba(255,255,255,.4);transition:transform .15s}
+.card p{margin:0 0 12px}.card p:last-child{margin:0}
+.poem{font-size:23px;font-weight:500;line-height:2.4}
+.btn{font:inherit;font-weight:900;font-size:19px;border:0;border-radius:999px;padding:13px 36px;cursor:pointer;color:#fff;background:linear-gradient(135deg,var(--rose),var(--ember));box-shadow:0 8px 0 #9b1646,0 14px 30px rgba(255,80,80,.5);transition:transform .12s,box-shadow .12s}
+.btn:active{transform:translateY(6px);box-shadow:0 2px 0 #9b1646,0 6px 14px rgba(255,80,80,.5)}
+.btn:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+.alt{background:#4a2330;color:var(--muted);box-shadow:0 6px 0 #25101a}
+h2{margin:0;font-size:clamp(26px,7vw,40px);font-weight:900;text-shadow:0 0 24px rgba(255,120,90,.7)}
+.row{display:flex;gap:18px;align-items:center;justify-content:center;flex-wrap:wrap;min-height:90px}
+.big{margin:0;font-weight:900;font-size:clamp(38px,12vw,76px);line-height:1.3;color:#fff0c8;text-shadow:0 1px 0 #ffc15a,0 2px 0 #ff9a3c,0 3px 0 #ff6a3c,0 4px 0 #ff3d5a,0 5px 0 #c01c55,0 6px 0 #8f1048,0 10px 22px rgba(0,0,0,.6),0 0 40px rgba(255,120,60,.9)}
+.sig{font-size:clamp(46px,15vw,110px);margin:0}
+.heartline{font-size:34px;letter-spacing:6px}
+.dots{position:fixed;bottom:calc(18px + env(safe-area-inset-bottom,0px));left:0;right:0;display:flex;justify-content:center;gap:8px;pointer-events:none}
+.dots i{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.25)}.dots i.on{background:var(--ember);box-shadow:0 0 10px var(--ember)}
+.name,.big{color:transparent;background:linear-gradient(180deg,#fff7df 0%,#ffd27a 34%,#ff8a4c 68%,#ff3d75 100%);-webkit-background-clip:text;background-clip:text;text-shadow:none;letter-spacing:-1px;filter:drop-shadow(0 3px 0 #9b1646) drop-shadow(0 8px 0 #5a0b30) drop-shadow(0 20px 22px rgba(0,0,0,.55)) drop-shadow(0 0 36px rgba(255,110,60,.65))}
+.sub{letter-spacing:.3px;text-shadow:0 2px 14px rgba(0,0,0,.5)}
+.card{border-radius:32px;background:linear-gradient(150deg,rgba(255,255,255,.15),rgba(255,255,255,.03) 60%,rgba(255,61,117,.12));border:1px solid rgba(255,255,255,.24);box-shadow:0 40px 80px rgba(0,0,0,.55),0 0 60px rgba(255,70,110,.25),inset 0 1px 0 rgba(255,255,255,.5)}
+.btn{background:linear-gradient(180deg,#ff7a9a,#ff3d75 55%,#e0265c);box-shadow:inset 0 1px 0 rgba(255,255,255,.55),0 8px 0 #8f1048,0 20px 36px rgba(255,61,117,.45)}
+.alt{background:linear-gradient(180deg,#5a2d3d,#3c1a27);box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 6px 0 #1e0c14}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 55%,rgba(0,0,0,.55) 100%);z-index:5}
+html,body{height:100dvh}
+.stage{overflow-y:auto;overflow-x:hidden;justify-content:safe center;padding:max(22px,env(safe-area-inset-top,0px)) 18px calc(52px + env(safe-area-inset-bottom,0px));-webkit-overflow-scrolling:touch}
+.stk{width:min(44vw,170px);height:auto;filter:drop-shadow(0 12px 18px rgba(0,0,0,.5));animation:wob 2.4s ease-in-out infinite;transform-origin:50% 90%}
+@keyframes wob{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg) scale(1.04)}}
+@media (max-width:480px){.card{font-size:17px;padding:20px 18px}.poem{font-size:20px}.btn{font-size:18px;padding:14px 30px;min-height:48px}.row{gap:14px}.sub{font-size:18px}}
+@media (prefers-reduced-motion:reduce){.stk{animation:none}.stage.on,.name{animation:none}}
+</style>
+</head>
+<body>
+<canvas id="gl" aria-hidden="true"></canvas>
+
+<div class="stage on" id="s0">
+  <p class="sub">🔥 فقط برای تو 🔥</p>
+  <h1 class="name">سعدیه</h1>
+  <p class="heartline" aria-hidden="true">❤️‍🔥💖❤️‍🔥</p>
+  <p class="sub">دلم برایت تنگ شده، یک لحظه بیا</p>
+  <button class="btn" data-next>بیا پیشم 💖</button>
+</div>
+
+<div class="stage" id="s1">
+  <div class="card tilt">
+    <p>جانِ دل، دخترم، طفلکم! دیگر قهر نباش. دلم برایت یک ذره شده.</p>
+    <p>تو که می‌دانی بدون تو هیچ چیز مزه ندارد؛ نه نان، نه خنده، نه حتی خوابِ شب.</p>
+    <p>بیا آشتی کنیم، قول می‌دهم یک دل سیر در آغوشت بگیرم و تا خنده نکردی رهایت نکنم. 😘</p>
+  </div>
+  <button class="btn" data-next>بعدی 💌</button>
+</div>
+
+<div class="stage" id="s2">
+  <div class="card tilt poem">
+    <p>سعدیه، ای شعله‌ی جانِ من<br>بی‌تو خاموش است جهانِ من<br>یک نگاهت گر ببخشد مرا<br>گرم شود باز زمانِ من ❤️‍🔥</p>
+  </div>
+  <button class="btn" data-next>بعدی 🥺</button>
+</div>
+
+<div class="stage" id="s3">
+  <svg class="stk" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="62" r="58" fill="#fff"/><circle cx="28" cy="28" r="14" fill="#c9783a"/><circle cx="92" cy="28" r="14" fill="#c9783a"/><circle cx="28" cy="28" r="7" fill="#ffb7a0"/><circle cx="92" cy="28" r="7" fill="#ffb7a0"/><circle cx="60" cy="62" r="42" fill="#e8955a"/><ellipse cx="60" cy="76" rx="15" ry="11" fill="#ffe3c8"/><circle cx="44" cy="58" r="8.5" fill="#2b1218"/><circle cx="76" cy="58" r="8.5" fill="#2b1218"/><circle cx="46.5" cy="55" r="3.2" fill="#fff"/><circle cx="78.5" cy="55" r="3.2" fill="#fff"/><circle cx="41.5" cy="61.5" r="1.6" fill="#fff"/><circle cx="73.5" cy="61.5" r="1.6" fill="#fff"/><path d="M34 48Q43 46 52 41M68 41Q77 46 86 48" stroke="#6b3317" stroke-width="3" fill="none" stroke-linecap="round"/><ellipse cx="60" cy="72" rx="4.5" ry="3.2" fill="#2b1218"/><path d="M53 82Q60 77 67 82" stroke="#2b1218" stroke-width="2.4" fill="none" stroke-linecap="round"/><circle cx="33" cy="72" r="5.5" fill="#ff7a9a" opacity=".65"/><circle cx="87" cy="72" r="5.5" fill="#ff7a9a" opacity=".65"/><path d="M35 67q-4 6 0 9q4-3 0-9z" fill="#6ec6ff"/><path d="M60 113C43 101 43 89 52 89C57 89 60 93 60 96C60 93 63 89 68 89C77 89 77 101 60 113Z" fill="#ff2d5a" stroke="#fff" stroke-width="2.5"/></svg>
+  <h2>نونویم، مرا می‌بخشی؟ 🥺</h2>
+  <div class="row" id="row">
+    <button class="btn" id="yes">بخشیدمت 💖</button>
+    <button class="btn alt" id="no">نه</button>
+  </div>
+</div>
+
+<div class="stage" id="s4">
+  <p class="big">جشن آشتی! 🎉🔥</p>
+  <p class="sub" style="font-size:21px">قربانت شوم دخترم، دلم آرام شد.<br>سعدیه، تو همه‌ی دنیای منی.</p>
+  <p class="heartline" aria-hidden="true">❤️‍🔥💞🌹💞❤️‍🔥</p>
+  <p class="sub">با عشق همیشگی</p>
+  <p class="big sig">احسان</p>
+</div>
+
+<div class="dots" id="dots"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+
+<script>
+(function(){
+  var cv=document.getElementById('gl');
+  var stages=[].slice.call(document.querySelectorAll('.stage')), dots=[].slice.call(document.querySelectorAll('#dots i')), cur=0, party=false;
+  function go(n){
+    stages[cur].classList.remove('on'); cur=n; stages[cur].classList.add('on');
+    dots.forEach(function(d,i){d.classList.toggle('on',i===cur)});
+    if(n===4){party=true; fire(true)}
+  }
+  [].forEach.call(document.querySelectorAll('[data-next]'),function(b){b.addEventListener('click',function(){go(cur+1)})});
+
+  /* no-button dodge */
+  var yes=document.getElementById('yes'), no=document.getElementById('no'), sz=19;
+  function dodge(e){if(e&&e.preventDefault)e.preventDefault();
+    no.style.transform='translate('+((Math.random()-.5)*220)+'px,'+((Math.random()-.5)*110)+'px)';
+    sz+=3; yes.style.fontSize=sz+'px'}
+  no.addEventListener('mouseenter',dodge);no.addEventListener('touchstart',dodge,{passive:false});no.addEventListener('click',dodge);
+  yes.addEventListener('click',function(){go(4)});
+
+  /* 3D tilt on cards */
+  [].forEach.call(document.querySelectorAll('.tilt'),function(c){
+    document.addEventListener('pointermove',function(e){
+      var x=(e.clientX/innerWidth-.5), y=(e.clientY/innerHeight-.5);
+      c.style.transform='rotateY('+(x*18)+'deg) rotateX('+(-y*18)+'deg)';
+    });
+  });
+
+  /* THREE scene */
+  var W=innerWidth,H=innerHeight;
+  var renderer=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:true});
+  renderer.setPixelRatio(Math.min(devicePixelRatio,2)); renderer.setSize(W,H);
+  var scene=new THREE.Scene(), cam=new THREE.PerspectiveCamera(55,W/H,1,500); cam.position.z=62;
+
+  var tc=document.createElement('canvas'); tc.width=tc.height=64;
+  var g=tc.getContext('2d'), gr=g.createRadialGradient(32,32,0,32,32,32);
+  gr.addColorStop(0,'rgba(255,255,255,1)');gr.addColorStop(.35,'rgba(255,255,255,.7)');gr.addColorStop(1,'rgba(255,255,255,0)');
+  g.fillStyle=gr;g.fillRect(0,0,64,64); var tex=new THREE.CanvasTexture(tc);
+
+  var N=innerWidth<600?6500:10000, pos=new Float32Array(N*3), col=new Float32Array(N*3), c1=new THREE.Color('#ff9a3c'), c2=new THREE.Color('#ff1f5a');
+  for(var i=0;i<N;i++){
+    var t=Math.random()*Math.PI*2, k=Math.pow(Math.random(),.4);
+    var x=16*Math.pow(Math.sin(t),3), y=13*Math.cos(t)-5*Math.cos(2*t)-2*Math.cos(3*t)-Math.cos(4*t);
+    var z=(Math.random()-.5)*10*(1-Math.abs(x)/18);
+    pos[i*3]=x*k*1.25; pos[i*3+1]=(y*k+1)*1.25; pos[i*3+2]=z*1.6;
+    var m=c1.clone().lerp(c2,Math.min(1,Math.max(0,(1-(y+17)/30)+Math.random()*.25)));
+    col[i*3]=m.r;col[i*3+1]=m.g;col[i*3+2]=m.b;
+  }
+  var hg=new THREE.BufferGeometry(); hg.setAttribute('position',new THREE.BufferAttribute(pos,3)); hg.setAttribute('color',new THREE.BufferAttribute(col,3));
+  var heart=new THREE.Points(hg,new THREE.PointsMaterial({size:1.1,map:tex,vertexColors:true,transparent:true,opacity:.75,depthWrite:false,blending:THREE.AdditiveBlending}));
+  scene.add(heart);
+
+  var SN=700, sp=new Float32Array(SN*3);
+  for(var s=0;s<SN;s++){sp[s*3]=(Math.random()-.5)*220;sp[s*3+1]=(Math.random()-.5)*160;sp[s*3+2]=(Math.random()-.5)*160-20}
+  var sg=new THREE.BufferGeometry(); sg.setAttribute('position',new THREE.BufferAttribute(sp,3));
+  var stars=new THREE.Points(sg,new THREE.PointsMaterial({size:1.2,map:tex,color:0xffd9a8,transparent:true,opacity:.7,depthWrite:false,blending:THREE.AdditiveBlending}));
+  scene.add(stars);
+
+  var bursts=[], palette=['#ff3d75','#ff9a3c','#ffd27a','#ff5fa2','#ffffff','#ff6a3c'];
+  function burst(cx,cy,cz,colr){
+    var n=170,p=new Float32Array(n*3),v=[],i2;
+    for(i2=0;i2<n;i2++){
+      var a=Math.random()*Math.PI*2,b=Math.acos(2*Math.random()-1),sp2=14+Math.random()*14;
+      v.push(Math.sin(b)*Math.cos(a)*sp2,Math.sin(b)*Math.sin(a)*sp2,Math.cos(b)*sp2);
+      p[i2*3]=cx;p[i2*3+1]=cy;p[i2*3+2]=cz;
+    }
+    var gg=new THREE.BufferGeometry(); gg.setAttribute('position',new THREE.BufferAttribute(p,3));
+    var mm=new THREE.PointsMaterial({size:2.2,map:tex,color:colr,transparent:true,opacity:1,depthWrite:false,blending:THREE.AdditiveBlending});
+    var pt=new THREE.Points(gg,mm); scene.add(pt); bursts.push({pt:pt,v:v,life:1});
+  }
+  var timer;
+  function fire(on){
+    clearInterval(timer);
+    if(!on)return;
+    var k=0; timer=setInterval(function(){
+      burst((Math.random()-.5)*70,(Math.random()-.3)*40,(Math.random()-.5)*30,palette[k++%palette.length]);
+      if(Math.random()>.5)burst((Math.random()-.5)*70,(Math.random()-.3)*40,(Math.random()-.5)*30,palette[(k+2)%palette.length]);
+    },380);
+  }
+
+  var mx=0,my=0; document.addEventListener('pointermove',function(e){mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
+  var clock=new THREE.Clock();
+  function loop(){
+    var dt=Math.min(clock.getDelta(),.05), t=clock.elapsedTime;
+    var beat=1+Math.max(0,Math.sin(t*4))*Math.pow(Math.max(0,Math.sin(t*4)),3)*.12;
+    var sc=(party?1.25:1)*beat; heart.scale.set(sc,sc,sc);
+    heart.rotation.y=Math.sin(t*.5)*.9; heart.rotation.x=my*.3;
+    heart.position.y=party?6:2;
+    stars.rotation.y=t*.02;
+    cam.position.x+=(mx*14-cam.position.x)*.04; cam.position.y+=(-my*8-cam.position.y)*.04; cam.lookAt(0,0,0);
+    for(var i=bursts.length-1;i>=0;i--){
+      var b=bursts[i],arr=b.pt.geometry.attributes.position.array;
+      for(var j=0;j<b.v.length;j+=3){arr[j]+=b.v[j]*dt;arr[j+1]+=b.v[j+1]*dt;arr[j+2]+=b.v[j+2]*dt;b.v[j+1]-=9*dt;b.v[j]*=.985;b.v[j+2]*=.985}
+      b.pt.geometry.attributes.position.needsUpdate=true;
+      b.life-=dt*.6; b.pt.material.opacity=Math.max(0,b.life);
+      if(b.life<=0){scene.remove(b.pt);b.pt.geometry.dispose();b.pt.material.dispose();bursts.splice(i,1)}
+    }
+    renderer.render(scene,cam); requestAnimationFrame(loop);
+  }
+  loop();
+  addEventListener('resize',function(){W=innerWidth;H=innerHeight;renderer.setSize(W,H);cam.aspect=W/H;cam.updateProjectionMatrix()});
+})();
+</script>
+</body>
+</html>
